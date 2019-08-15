@@ -86,6 +86,12 @@ describe("getAvailabilities", () => {
           starts_at: new Date("2018-08-04 09:30"),
           ends_at: new Date("2018-08-04 12:30"),
           weekly_recurring: true
+        },
+        {
+          kind: "appointment",
+          starts_at: new Date("2014-08-09 09:30"),
+          ends_at: new Date("2014-08-09 12:30"),
+          weekly_recurring: true
         }
       ]);
     });
