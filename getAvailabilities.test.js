@@ -73,7 +73,7 @@ describe("getAvailabilities", () => {
     });
   });
 
- /* describe("case 3", () => {
+  describe("case 3", () => {
     beforeEach(async () => {
       await knex("events").insert([
         {
@@ -104,5 +104,5 @@ describe("getAvailabilities", () => {
       );
       expect(availabilities[6].slots).toEqual([]);
     });
-  });*/
+  });
 });
