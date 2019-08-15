@@ -1,9 +1,11 @@
 import moment from "moment";
 import knex from "knexClient";
 
-export default async function getAvailabilities(date) {
+export default async function getAvailabilities(date, days) {
+
+ // console.log(days);
   const availabilities = new Map();
-  for (let i = 0; i < 7; ++i) {
+  for (let i = 0; i < days; ++i) {
     const tmpDate = moment(date).add(i, "days");
     availabilities.set(tmpDate.format("d"), {
       date: tmpDate.toDate(),
@@ -19,6 +21,8 @@ export default async function getAvailabilities(date) {
     });
 
   for (const event of events) {
+
+    //console.log.og(events);
     for (
       let date = moment(event.starts_at);
       date.isBefore(event.ends_at);
@@ -34,6 +38,6 @@ export default async function getAvailabilities(date) {
       }
     }
   }
-
+  console.log(availabilities.values());
   return Array.from(availabilities.values())
 }
